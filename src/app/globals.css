@@ -1,0 +1,293 @@
+@import "tailwindcss";
+
+/* Abdul Baseer Khan — Architectural Luxury Editorial Design System */
+
+:root,
+[data-theme="atelier"] {
+  --bg-primary: #FAF7F2;
+  --bg-secondary: #F3EFE8;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FCFAF6;
+  --bg-glass: rgba(250, 247, 242, 0.88);
+  
+  --text-primary: #191817;
+  --text-secondary: #57534E;
+  --text-muted: #8E877F;
+  --text-inv: #FAF7F2;
+  
+  --border-hairline: rgba(25, 24, 23, 0.09);
+  --border-strong: rgba(25, 24, 23, 0.18);
+  --border-focus: #B85D3B;
+  
+  --accent-clay: #B85D3B;
+  --accent-clay-hover: #A14F30;
+  --accent-clay-subtle: rgba(184, 93, 59, 0.12);
+  
+  --accent-gold: #C5A880;
+  --accent-gold-hover: #B59363;
+  --accent-gold-subtle: rgba(197, 168, 128, 0.14);
+  
+  --accent-olive: #4F6352;
+  
+  --shadow-sm: 0 2px 8px rgba(25, 24, 23, 0.04);
+  --shadow-md: 0 12px 30px -10px rgba(25, 24, 23, 0.08);
+  --shadow-lg: 0 25px 50px -12px rgba(25, 24, 23, 0.12);
+  
+  --grid-line: rgba(25, 24, 23, 0.04);
+  --dot-color: rgba(25, 24, 23, 0.15);
+}
+
+[data-theme="nocturne"] {
+  --bg-primary: #0F0E0D;
+  --bg-secondary: #171615;
+  --bg-card: #1D1C1B;
+  --bg-card-hover: #242220;
+  --bg-glass: rgba(15, 14, 13, 0.9);
+  
+  --text-primary: #F7F5F0;
+  --text-secondary: #C4BFB8;
+  --text-muted: #827C74;
+  --text-inv: #0F0E0D;
+  
+  --border-hairline: rgba(247, 245, 240, 0.1);
+  --border-strong: rgba(247, 245, 240, 0.2);
+  --border-focus: #D97A5E;
+  
+  --accent-clay: #D97A5E;
+  --accent-clay-hover: #E48D73;
+  --accent-clay-subtle: rgba(217, 122, 94, 0.16);
+  
+  --accent-gold: #DFBE91;
+  --accent-gold-hover: #E8CDA6;
+  --accent-gold-subtle: rgba(223, 190, 145, 0.18);
+  
+  --accent-olive: #7D8D7E;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
+  
+  --grid-line: rgba(247, 245, 240, 0.04);
+  --dot-color: rgba(247, 245, 240, 0.18);
+}
+
+[data-theme="terminal"] {
+  --bg-primary: #0A0F0D;
+  --bg-secondary: #111A16;
+  --bg-card: #15221D;
+  --bg-card-hover: #1B2B25;
+  --bg-glass: rgba(10, 15, 13, 0.9);
+  
+  --text-primary: #E8F7EE;
+  --text-secondary: #A3C8B7;
+  --text-muted: #628B78;
+  --text-inv: #0A0F0D;
+  
+  --border-hairline: rgba(16, 185, 129, 0.15);
+  --border-strong: rgba(16, 185, 129, 0.28);
+  --border-focus: #10B981;
+  
+  --accent-clay: #10B981;
+  --accent-clay-hover: #34D399;
+  --accent-clay-subtle: rgba(16, 185, 129, 0.16);
+  
+  --accent-gold: #34D399;
+  --accent-gold-hover: #6EE7B7;
+  --accent-gold-subtle: rgba(52, 211, 153, 0.18);
+  
+  --accent-olive: #059669;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 12px 30px -10px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+  
+  --grid-line: rgba(16, 185, 129, 0.05);
+  --dot-color: rgba(16, 185, 129, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Luxury Editorial Serif Font Fallback */
+.font-serif,
+.font-display {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, Monaco, monospace;
+}
+
+.container-page,
+.container-custom {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-page,
+  .container-custom {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Blueprint Grid Background Pattern */
+.bg-blueprint {
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-dots {
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Eyebrow Label */
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* Custom Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border-radius: 9999px;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.75rem 1.65rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-clay);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px -5px var(--accent-clay-subtle);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border-radius: 9999px;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+/* Rotating Stamp Badge */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 24s linear infinite;
+}
+
+/* Pulse Dot */
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulseDot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Infinite Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-clay);
+}
