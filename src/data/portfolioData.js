@@ -17,7 +17,7 @@ export const DEVELOPER_INFO = {
   semester: "1st Semester",
   campus: "Lahore Campus (Faisal Town)",
   email: "abdulbaseerkhan.dev@gmail.com",
-  github: "https://github.com/abdulbaseer-khan",
+  github: "https://github.com/asfandyar650/abdul-baseer-portfolio",
   linkedin: "https://linkedin.com/in/abdulbaseer-khan",
   whatsapp: "+92 300 0000000",
   bio: "I'm a front-end developer and 1st-semester BS Computer Science student at FAST University Lahore. I combine academic computer science rigor—logic, algorithms, and C++ memory foundations—with modern front-end craft. I turn design blueprints into lightning-fast, accessible web applications using React, Next.js, and Tailwind CSS.",
@@ -201,8 +201,8 @@ export const PROJECTS = [
     ],
     mockupColor: "from-amber-700/20 via-yellow-600/10 to-transparent",
     accentColor: "#B85D3B",
-    demoUrl: "https://abdulbaseer-portfolio.web.app",
-    githubUrl: "https://github.com/abdulbaseer-khan/portfolio",
+    demoUrl: "https://abdul-baseer-portfolio.vercel.app",
+    githubUrl: "https://github.com/asfandyar650/abdul-baseer-portfolio",
     architecture: "Next.js App Router with theme provider, modular UI components, and accessible dialogs."
   },
   {
